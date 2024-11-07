@@ -1,9 +1,10 @@
 export const theme = {
   colors: {
-    first: "#87A2FF",
-    second: "#C4D7FF",
-    third: "#FFD7C4",
-    fourth: "#FFF4B5",
+    one: "#0A2342",
+    two: "#2CA58D",
+    three: "#84BC9C",
+    four: "#FFFDF7",
+    five: "#F46197"
   },
   break: {
     tablet: "768px",
