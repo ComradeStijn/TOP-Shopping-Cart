@@ -7,7 +7,7 @@ import { Slide } from "react-awesome-reveal";
 function Layout() {
   return (
       <StyledLayout>
-        <Slide direction="down"><Header /></Slide>
+        <Slide direction="down" triggerOnce={true}><Header /></Slide>
         <Outlet />
         <Footer />
       </StyledLayout>
