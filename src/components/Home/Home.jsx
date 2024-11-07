@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import Hero from "./Hero";
+import { Fade } from "react-awesome-reveal";
 
 export default function Home() {
   return (
     <main>
-      <Hero />
+      <Fade delay={500}  direction="left" ><Hero /></Fade>
+      
       
     </main>
   );

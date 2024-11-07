@@ -47,6 +47,11 @@ const HeroTextContainer = styled.div`
     font-size: 2.5rem;
     margin-bottom: 1rem;
   }
+
+  @media (min-width: ${props => props.theme.break.desktop}) {
+    position: relative;
+    right: 20%;
+  }
 `;
 
 const StyledLink = styled(Link)`

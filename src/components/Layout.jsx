@@ -2,11 +2,12 @@ import { Outlet } from "react-router-dom";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import styled from "styled-components";
+import { Slide } from "react-awesome-reveal";
 
 function Layout() {
   return (
       <StyledLayout>
-        <Header />
+        <Slide direction="down"><Header /></Slide>
         <Outlet />
         <Footer />
       </StyledLayout>
