@@ -8,7 +8,8 @@ import { Slide } from "react-awesome-reveal";
 function Layout() {
   return (
       <StyledLayout>
-        <Slide direction="down" triggerOnce={true}><Header /></Slide>
+        {/* zIndex of 1 to ensure that dropdown menu falls on top of Hero element when rendering Home */}
+        <Slide direction="down" triggerOnce={true} style={{ zIndex: 1}}><Header id="test" /></Slide>
         <Outlet />
         <Footer />
       </StyledLayout>
