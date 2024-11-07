@@ -60,7 +60,6 @@ const Article = styled.article`
 
 const StyledLink = styled(Link)`
   font-family: "M PLUS 1p", sans-serif;
-  width: 100%;
   background-color: ${(props) => props.theme.colors.two};
   text-decoration: none;
   color: white;
