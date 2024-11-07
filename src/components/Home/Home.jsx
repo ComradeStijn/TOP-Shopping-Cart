@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <main>
-      <Fade delay={500} direction="left" triggerOnce={true}>
+      <Fade delay={500} direction="left" triggerOnce={true} >
         <Hero />
       </Fade>
       <Fade delay={500} triggerOnce={true} direction="up">
@@ -58,7 +58,7 @@ export const Container = styled.div`
   }
 `;
 
-const Grid = styled.section`
+export const Grid = styled.section`
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr;
