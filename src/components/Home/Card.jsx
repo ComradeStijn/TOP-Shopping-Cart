@@ -11,7 +11,7 @@ export default function Card({ product }) {
 
   return (
     <Article>
-      <img src={product.image} />
+      <img src={product.image} alt={product.title} />
       <ProductTitle>{trucatedText}</ProductTitle>
       <StyledLink to="#">Go to item</StyledLink>
     </Article>
