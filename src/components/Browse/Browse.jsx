@@ -38,7 +38,7 @@ export default function Browse() {
         <WiderGrid>
           {items.length > 0 ? (
             filteredItems.map(item => (
-              <Fade key={item.id} direction="up">
+              <Fade key={item.id} direction="up" triggerOnce={true}>
                 <Card  product={item} />
               </Fade>
             ))
