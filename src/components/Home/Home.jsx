@@ -2,10 +2,15 @@ import styled from "styled-components";
 import Hero from "./Hero";
 import Card from "./Card";
 import { Fade } from "react-awesome-reveal";
-import { useLoaderData } from "react-router-dom";
+import fetchItems from "./fetch";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  const data = useLoaderData();
+  const [ bestsellers, setBestsellers ] = useState(null);
+
+  useEffect(() => {
+    fetchItems(8).then((data) => setBestsellers(data));
+  }, [])
 
   return (
     <main>
@@ -16,11 +21,15 @@ export default function Home() {
         <Container>
           <Bestsellers>Our Bestsellers</Bestsellers>
           <Grid>
-            {data.map((product) => (
-              <Fade key={product.id} triggerOnce={true} cascade={true} damping={0.5} direction="up">
+            {bestsellers ? (
+              bestsellers.map(product => (
+                <Fade key={product.id} triggerOnce={true} cascade={true} damping={0.5} direction="up">
                 <Card product={product} />
               </Fade>
-            ))}
+              ))
+            ) : (
+              null
+            )}
           </Grid>
         </Container>
       </Fade>

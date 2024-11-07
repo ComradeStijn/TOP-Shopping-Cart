@@ -4,6 +4,7 @@ import Footer from "./Footer/Footer";
 import styled from "styled-components";
 import { Slide } from "react-awesome-reveal";
 
+
 function Layout() {
   return (
       <StyledLayout>
