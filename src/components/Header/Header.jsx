@@ -36,7 +36,7 @@ const Content = styled.div`
     width: 760px;
   }
   @media (min-width: ${props => props.theme.break.desktop}) {
-    width: 1370px;
+    width: 1360px;
   }
 `
 
