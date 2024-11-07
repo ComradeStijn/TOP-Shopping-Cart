@@ -19,7 +19,7 @@ export default function Home() {
       </Fade>
       <Fade delay={500} triggerOnce={true} direction="up">
         <Container>
-          <Bestsellers>Our Bestsellers</Bestsellers>
+          <Title>Our Bestsellers</Title>
           <Grid>
             {bestsellers ? (
               bestsellers.map(product => (
@@ -37,7 +37,7 @@ export default function Home() {
   );
 }
 
-const Bestsellers = styled.h1`
+export const Title = styled.h1`
   text-align: center;
   font-family: "Anton SC", sans-serif;
   font-weight: 300;
@@ -45,7 +45,7 @@ const Bestsellers = styled.h1`
   margin: 1rem auto;
 `;
 
-const Container = styled.div`
+export const Container = styled.div`
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   margin: 2rem auto;
   padding: 2rem;
