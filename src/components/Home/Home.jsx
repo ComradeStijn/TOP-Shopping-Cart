@@ -12,7 +12,7 @@ export default function Home() {
       <Fade delay={500} direction="left" triggerOnce={true}>
         <Hero />
       </Fade>
-      <Fade delay={1000} triggerOnce={true} direction="up">
+      <Fade delay={500} triggerOnce={true} direction="up">
         <Container>
           <Bestsellers>Our Bestsellers</Bestsellers>
           <Grid>
