@@ -16,7 +16,7 @@ export default function Nav({ $isOpen }) {
     <StyledNav $isOpen={$isOpen}>
       <StyledLink to="/">HOME</StyledLink>
       <StyledLink to="/browse">BROWSE</StyledLink>
-      <StyledCart to="#" style={{position: "relative"}}>
+      <StyledCart to="/cart" style={{position: "relative"}}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="40"

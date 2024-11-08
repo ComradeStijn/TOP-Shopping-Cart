@@ -20,7 +20,7 @@ export default function Card({ product }) {
 
   function addCart() {
     if (amount) {
-      addCartContext(product.id, amount);
+      addCartContext(product.id, Number(amount), Number(product.price));
     }
   }
 
