@@ -8,7 +8,7 @@ Card.propTypes = {
 };
 
 export default function Card({ product }) {
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(1);
   const { addCartContext } = useContext(CartContext);
 
   const truncatedDescription = truncate(product.description, 100);
