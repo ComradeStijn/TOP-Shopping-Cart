@@ -107,4 +107,13 @@ const AddCart = styled.button`
   color: white;
   font-size: 2rem;
   padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+
+  &:hover, &:focus {
+    cursor: pointer;
+    transform: scale(1.05);
+    outline: 3px solid ${(props) => props.theme.colors.two};
+    background-color: white;
+    color: ${(props) => props.theme.colors.two};
+  }
 `;
