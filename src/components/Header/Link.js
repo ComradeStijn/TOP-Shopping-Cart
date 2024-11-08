@@ -14,7 +14,9 @@ const StyledLink = styled(Link)`
     text-decoration: underline;
     transform: scale(1.1);
     color: black;
+
   }
+
 `
 
 export default StyledLink

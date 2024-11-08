@@ -1,37 +1,53 @@
-import PropTypes from "prop-types"
-import { useState } from "react"
-import styled from "styled-components"
+import PropTypes from "prop-types";
+import { useContext, useState } from "react";
+import styled from "styled-components";
+import { CartContext } from "../Cart";
 
 Card.propTypes = {
   product: PropTypes.object,
-}
+};
 
 export default function Card({ product }) {
-  const [ amount, setAmount ] = useState(0)
+  const [amount, setAmount] = useState(0);
+  const { addCartContext } = useContext(CartContext);
 
   const truncatedDescription = truncate(product.description, 100);
 
   function changeAmount(e) {
     e.preventDefault();
-    setAmount(e.target.value)
+    setAmount(e.target.value);
   }
 
-  return(
+  function addCart() {
+    if (amount) {
+      addCartContext(product.id, amount);
+    }
+  }
+
+  return (
     <Article>
       <img src={product.image} alt={product.title} />
       <h1>{product.title}</h1>
       <p>{truncatedDescription}</p>
       <BuyDiv>
-        <AmountInput type="number" value={amount} onChange={changeAmount} min="0" max="5" step="1" required />
-        <AddCart>Add to cart - {product.price}€</AddCart>
+        <AmountInput
+          type="number"
+          value={amount}
+          onChange={changeAmount}
+          min="0"
+          max="5"
+          step="1"
+          required
+        />
+        <AddCart onClick={addCart}>Add to cart - {product.price}€</AddCart>
       </BuyDiv>
     </Article>
-  )
+  );
 }
 
 function truncate(text, maxLength) {
   if (text.length > maxLength) {
-    return text.slice(0, maxLength) + '...';
+    return text.slice(0, maxLength) + "...";
   } else {
     return text;
   }
@@ -41,10 +57,10 @@ const Article = styled.article`
   height: 100%;
   width: 100%;
   padding: 2rem;
-  box-shadow: 0 0 5PX rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   display: grid;
   grid-template-rows: 400px auto 1fr auto;
-  font-family: 'M PLUS 1p', sans-serif;
+  font-family: "M PLUS 1p", sans-serif;
 
   img {
     padding: 1rem;
@@ -65,9 +81,7 @@ const Article = styled.article`
   p {
     font-size: 1.2rem;
   }
-
-
-`
+`;
 
 const BuyDiv = styled.div`
   margin: 1rem;
@@ -77,20 +91,20 @@ const BuyDiv = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-`
+`;
 
 const AmountInput = styled.input`
   width: 3.5rem;
   padding: 0.5rem;
   height: max-content;
   font-size: 1.5rem;
-`
+`;
 
 const AddCart = styled.button`
   flex: 1;
-  background-color: ${props => props.theme.colors.two};
+  background-color: ${(props) => props.theme.colors.two};
   border: none;
   color: white;
   font-size: 2rem;
   padding: 0.5rem 1rem;
-`
+`;

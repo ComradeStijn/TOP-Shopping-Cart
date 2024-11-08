@@ -5,12 +5,14 @@ import './reset.css'
 import { theme } from './theme';
 import { ThemeProvider } from 'styled-components';
 import { router } from './router.jsx';
-
+import { CartProvider } from './components/Context.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
-      <RouterProvider router={router} />
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>
     </ThemeProvider>
   </StrictMode>,
 )
