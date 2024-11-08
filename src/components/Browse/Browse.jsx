@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import fetchItems from "../Home/fetch";
+import fetchItems from "../fetch";
 import { Container, Title } from "../Home/Home";
 import styled from "styled-components";
 import { Fade } from "react-awesome-reveal";

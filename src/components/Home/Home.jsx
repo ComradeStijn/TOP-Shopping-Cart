@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Hero from "./Hero";
 import Card from "./Card";
 import { Fade } from "react-awesome-reveal";
-import fetchItems from "./fetch";
+import fetchItems from "../fetch";
 import { useEffect, useState } from "react";
 
 export default function Home() {

@@ -10,14 +10,14 @@ CartProvider.propTypes = {
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
-  function addCartContext(id, amount) {
+  function addCartContext(id, amount, price) {
     setCart(prevCart => {
       const alreadyInCart = prevCart.some(item => item.id === id);
 
       if (alreadyInCart) {
-        return prevCart.map(item => item.id === id ? {...item, amount:amount} : {...item})
+        return prevCart.map(item => item.id === id ? {...item, amount: amount, price: price} : {...item})
       } else {
-        return [...prevCart, {id: id, amount: amount}]
+        return [...prevCart, {id: id, amount: amount, price: price}]
       }
     })
   }
