@@ -13,7 +13,7 @@ export default function Card({ product }) {
     <Article>
       <img src={product.image} alt={product.title} />
       <ProductTitle>{trucatedText}</ProductTitle>
-      <StyledLink to="#">Go to item</StyledLink>
+      <StyledLink to="/browse">Go to Shop</StyledLink>
     </Article>
   );
 }
